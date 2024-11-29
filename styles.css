@@ -1,0 +1,64 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    font-weight: 250;
+    overflow-y: scroll;
+}
+
+/* nav styling -> aim for simple and smooth */
+
+.nav-container {
+    background: #4b331f;
+    height: 50px;
+    z-index: 300;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+}
+
+.nav-container nav {
+    width: 1000px;
+    margin: 0 auto;
+    padding: 0 8px;
+    height: 100%;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    height: 100%;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    opacity: 0.8;
+    transition: opacity 400ms;
+}
+
+nav ul li a:hover {
+    opacity: 1;
+}
+
+/* search icon styling */
+
+.link-search {
+    background: url('images/search-icon.jpg');
+    display: block;
+    background-position: center;
+    background-size: 18px;
+    background-repeat: no-repeat;
+    width: 15px;
+    height: 50px;
+}
