@@ -343,9 +343,11 @@ nav .desktop-nav li a:hover {
         width: 100%;
         padding: 0 32px;
     }
+
 }
 
 @media (max-width: 768px) {
+    
     .nav-container .desktop-nav {
         flex-direction: column;
         position: fixed;
@@ -452,7 +454,7 @@ nav .desktop-nav li a:hover {
         transition-duration: 200ms;
     }
 
-    /* Search Box */
+    /* search box */
 
     .mobile-search-container input {
         width: 100%;
@@ -581,6 +583,195 @@ nav .desktop-nav li a:hover {
     }
 }
 
+/* welcome */
+.welcome-container {
+    padding: 60px;
+    background-color: #fff;
+}
+
+.welcome-content h1 {
+    font-size: 60px;
+    color: #ff8800;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0 auto;
+
+}
+
+.welcome-content p {
+    font-size: 40px;
+    text-align: center;
+}
+
+
+/* featured recipes section */
+.featured-recipes {
+  padding: 2rem;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.featured-recipes h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #000000;
+}
+
+.recipe-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 1.5rem;
+  padding: 0 1rem;
+}
+
+.recipe-card {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.recipe-card img {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #ddd;
+}
+
+.recipe-card h3 {
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+  color: #333;
+}
+
+.quick-view {
+  background-color: #b6660b;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.quick-view:hover {
+  background-color: #ff8800;
+}
+
+/* signup */
+.signup-container {
+    padding: 60px;
+    background-color: #fff;
+}
+
+.signup-content h1 {
+    font-size: 60px;
+    color: #ff8800;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0 auto;
+
+}
+
+.signup-content p {
+    font-size: 20px;
+    text-align: center;
+    margin-top: 12px;
+}
+
+
+/* signup container */
+.signup-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f5f5f5;
+}
+  
+.signup-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px;
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+}
+
+.signup-content h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #000000;
+}
+
+.signup-content p {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    color: #646464;
+}
+
+.signup-content a {
+    color: #ff7300;
+    text-decoration: none;
+}
+
+.signup-content a:hover {
+    text-decoration: underline;
+}
+
+/* form styling */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    color: #161616;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input {
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+.form-group input:focus {
+    border-color: #ff7300;
+    box-shadow: 0 0 4px;
+}
+
+/* submit button */
+.btn-submit {
+    padding: 0.8rem;
+    font-size: 1rem;
+    background-color: #ff7300c9;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+background-color: #ff7300;
+}
 
 input,
 div,

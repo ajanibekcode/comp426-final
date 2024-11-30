@@ -49,3 +49,35 @@ cancelBtn.addEventListener("click", () => {
     nav.classList.remove("move-up");
     desktopNav.classList.remove("move-down");
 })
+
+// API Key for Spoonacular API
+const API_KEY = 'enterapikey'; 
+const BASE_URL = 'https://api.spoonacular.com/recipes';
+
+async function fetchFeaturedRecipes() {
+  try {
+    const response = await fetch(`${BASE_URL}/random?&number=5&apiKey=${API_KEY}`);
+    const data = await response.json();
+    const recipes = data.recipes;
+
+    const recipeGrid = document.querySelector('.recipe-grid');
+    recipeGrid.innerHTML = recipes
+      .map(recipe => createRecipeCard(recipe))
+      .join('');
+  } catch (error) {
+    console.error('something wrong with fetchFeaturedRecipes: ', error);
+  }
+}
+
+function createRecipeCard(recipe) {
+  return `
+    <div class="recipe-card">
+      <img src="${recipe.image}" alt="${recipe.title}">
+      <h3>${recipe.title}</h3>
+      <button class="quick-view" data-id="${recipe.id}">Quick View</button>
+    </div>
+  `;
+}
+
+// fetch and render recipes
+document.addEventListener('DOMContentLoaded', fetchFeaturedRecipes);
