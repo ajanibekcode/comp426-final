@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Find My Recipe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="search-bar-container">
+        <form id="search-form">
+            <input 
+                type="text" 
+                id="search-input" 
+                placeholder="Search recipes, ingredients, foods..." 
+                aria-label="Search"
+            >
+            <button type="submit">Search</button>
+        </form>
+        <button id="back-button">Back to Home</button>
+    </div>
+
+
+    <div class="search-results-container">
+        <h2>Results for "<span id="query"></span>"</h2>
+        <div class="recipe-grid"></div>
+    </div>
+
+    <div class="overlay"></div>
+    
+    <script src="search-results.js"></script>
+
+</body>
+</html>
