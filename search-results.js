@@ -1,4 +1,4 @@
-const API_KEY = 'enterapikey'; 
+const API_KEY = CONFIG.API_KEY;
 const BASE_URL = 'https://api.spoonacular.com/recipes';
 
 const params = new URLSearchParams(window.location.search);
@@ -56,3 +56,12 @@ backButton.addEventListener('click', () => {
 if (query) {
   fetchSearchResults(query);
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelector('.recipe-grid').addEventListener('click', event => {
+      if (event.target.classList.contains('quick-view')) {
+          const recipeId = event.target.getAttribute('data-id');
+          window.location.href = `recipeDetail.html?id=${recipeId}`;
+      }
+  });
+});

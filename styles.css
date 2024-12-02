@@ -881,3 +881,67 @@ a {
 .signup-content a:hover {
     text-decoration: underline;
 }
+
+/* Recipe Detail Page Styles */
+
+.recipe-detail {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.recipe-info {
+    text-align: center;
+}
+
+.recipe-info img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.recipe-info h2 {
+    font-size: 24px;
+    margin: 20px 0;
+    color: #333;
+}
+
+.recipe-info p {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.5;
+}
+
+.ingredients-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.ingredients-list li {
+    font-size: 16px;
+    color: #333;
+    padding: 5px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.back-button,
+.favorite-button {
+    display: inline-block;
+    margin: 10px 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #e6951f;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.back-button:hover,
+.favorite-button:hover {
+    background-color: #ffad29;
+}

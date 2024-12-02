@@ -49,7 +49,7 @@ cancelBtn.addEventListener("click", () => {
 });
 
 // API Key for Spoonacular API
-const API_KEY = 'enterapikeyhere'; 
+const API_KEY = CONFIG.API_KEY; 
 const BASE_URL = 'https://api.spoonacular.com/recipes';
 
 async function fetchFeaturedRecipes() {
@@ -140,4 +140,11 @@ if (window.location.pathname.includes('search-results.html')) {
 
 document.addEventListener('DOMContentLoaded', fetchFeaturedRecipes);
 
-
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelector('.recipe-grid').addEventListener('click', event => {
+        if (event.target.classList.contains('quick-view')) {
+            const recipeId = event.target.getAttribute('data-id');
+            window.location.href = `recipeDetail.html?id=${recipeId}`;
+        }
+    });
+});
