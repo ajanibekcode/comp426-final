@@ -49,7 +49,7 @@ cancelBtn.addEventListener("click", () => {
 });
 
 // API Key for Spoonacular API
-const API_KEY = CONFIG.API_KEY; 
+const API_KEY = "CONFIG.API_KEY"; 
 const BASE_URL = 'https://api.spoonacular.com/recipes';
 
 async function fetchFeaturedRecipes() {
@@ -148,3 +148,101 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+
+
+
+// Check if the user is logged in (on page load YC)
+window.onload = () => {
+    if (localStorage.getItem('authToken')) {
+        console.log("logged in")
+        updateNavForLoggedInUser();
+    } else {
+        updateNavForLoggedOutUser();
+        console.log("logged out")
+    }
+
+    
+    const logoutButton = document.getElementById('logout-button');
+    if (logoutButton) {
+        logoutButton.addEventListener('click', (event) => {
+            event.preventDefault(); 
+            console.log('Sign out button clicked');
+            // Remove the token from localStorage
+            localStorage.removeItem('authToken');
+
+            
+            updateNavForLoggedOutUser();
+
+            // Redirect 
+            window.location.href = 'index.html'; 
+        });
+    }
+};
+
+//login authentication (YC)
+document.getElementById('loginForm').addEventListener('submit', async (e) => {
+    e.preventDefault(); 
+
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+
+    try {
+        const response = await fetch('http://localhost:5000/login', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email, password }),
+        });
+
+        const result = await response.json();
+
+        if (response.ok) {
+            // If login is successful, store the JWT token
+            alert(result.message);
+            localStorage.setItem('authToken', result.token);
+            updateNavForLoggedInUser();
+            window.location.href = 'index.html'; // redirect
+        } else {
+            alert(result.message || 'Login failed.'); 
+        }
+    } catch (error) {
+        console.error('Error:', error); 
+        alert('Something went wrong. Please try again later.');
+    }
+});
+
+// update the navigation for logged-in users
+function updateNavForLoggedInUser() {
+    // Show 'My Account' and 'Sign Out', hide 'Login/Signup'
+    const myAccountLink = document.querySelector('.link-my-account');
+    const logoutLink = document.querySelector('#logout-button');
+    const loginSignupLink = document.querySelector('.link-login');
+    
+    if (myAccountLink) {
+        myAccountLink.style.display = 'block'; 
+    }
+    if (logoutLink) {
+        logoutLink.style.display = 'block'; 
+    }
+    if (loginSignupLink) {
+        loginSignupLink.style.display = 'none'; 
+    }
+}
+
+// update the navigation for logged-out users
+function updateNavForLoggedOutUser() {
+    // Hide 'My Account' and 'Sign Out', show 'Login/Signup'
+    const myAccountLink = document.querySelector('.link-my-account');
+    const logoutLink = document.querySelector('#logout-button');
+    const loginSignupLink = document.querySelector('.link-login');
+    
+    if (myAccountLink) {
+        myAccountLink.style.display = 'none'; 
+    }
+    if (logoutLink) {
+        logoutLink.style.display = 'none'; 
+    }
+    if (loginSignupLink) {
+        loginSignupLink.style.display = 'block'; 
+    }
+}
