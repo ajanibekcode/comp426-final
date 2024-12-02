@@ -1,9 +1,9 @@
-import sqlite3 from 'sqlite3';
-import { open } from 'sqlite';
+const sqlite3 = require('sqlite3');
+const { open } = require('sqlite');
 
 let db;
 
-export async function getDb() {
+async function getDb() {
     if (!db) {
         db = await open({
             filename: './db.sqlite',
@@ -12,3 +12,5 @@ export async function getDb() {
     }
     return db;
 }
+
+module.exports = { getDb };

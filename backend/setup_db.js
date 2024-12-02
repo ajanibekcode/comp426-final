@@ -1,4 +1,4 @@
-import { getDb } from './db.mjs';
+const { getDb } = require('./db.js');
 
 async function setupDatabase() {
     const db = await getDb();
