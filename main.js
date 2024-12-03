@@ -195,7 +195,7 @@ document.getElementById('loginForm').addEventListener('submit', async (e) => {
 
         if (response.ok) {
             // If login is successful, store the JWT token
-            alert(result.message);
+            // alert(result.message);
             localStorage.setItem('authToken', result.token);
             updateNavForLoggedInUser();
             window.location.href = 'index.html'; // redirect
@@ -214,6 +214,7 @@ function updateNavForLoggedInUser() {
     const myAccountLink = document.querySelector('.link-my-account');
     const logoutLink = document.querySelector('#logout-button');
     const loginSignupLink = document.querySelector('.link-login');
+    const myRecipe = document.querySelector('#my-recipe')
     
     if (myAccountLink) {
         myAccountLink.style.display = 'block'; 
@@ -223,6 +224,10 @@ function updateNavForLoggedInUser() {
     }
     if (loginSignupLink) {
         loginSignupLink.style.display = 'none'; 
+    }
+
+    if (myRecipe){
+        myRecipe.style.display = 'block';
     }
 }
 
