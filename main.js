@@ -49,7 +49,7 @@ cancelBtn.addEventListener("click", () => {
 });
 
 // API Key for Spoonacular API
-const API_KEY = "CONFIG.API_KEY"; 
+const API_KEY = CONFIG.API_KEY; 
 const BASE_URL = 'https://api.spoonacular.com/recipes';
 
 async function fetchFeaturedRecipes() {
@@ -148,9 +148,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
-
-
-
 
 // Check if the user is logged in (on page load YC)
 window.onload = () => {
