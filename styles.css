@@ -638,7 +638,7 @@ nav .desktop-nav li a:hover {
 
 .recipe-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(400px, 500px));
   gap: 1.5rem;
   padding: 0 1rem;
 }
@@ -984,4 +984,8 @@ a {
 
 .success-container .login-btn:hover {
     background-color: #e67e00; /* Slightly darker shade of orange on hover */
+}
+
+.vertical-margin {
+    margin-top: 80px;
 }

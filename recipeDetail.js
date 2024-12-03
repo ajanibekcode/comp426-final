@@ -30,7 +30,7 @@ function displayRecipeDetails(recipe, isFavorite) {
     `;
 
     document.querySelector('.back-button').addEventListener('click', () => {
-        window.history.back();
+        window.location.href = document.referrer || 'index.html';
     });
 
     document.querySelector('.favorite-button').addEventListener('click', toggleFavorite);
