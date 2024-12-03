@@ -112,3 +112,31 @@ if (window.location.pathname.includes('search-results.html')) {
         }
     });
 }
+
+
+//adding signup script (YC)    
+document.getElementById('signup-form').addEventListener('submit', async (e) => {
+    e.preventDefault(); // Prevent default form submission
+
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+
+    try {
+        const response = await fetch('http://localhost:3000/signup', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email, password }),
+        });
+
+        const result = await response.json();
+
+        if (response.ok) {
+            window.location.href = 'success.html'; // Redirect
+        } else {
+            alert(result.message || 'Signup failed.'); // Show error message
+        }
+    } catch (error) {
+        console.error('Error:', error); // Log errors
+        alert('Something went wrong. Please try again later.');
+    }
+});

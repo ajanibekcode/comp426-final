@@ -38,8 +38,15 @@
                 
                 <li><a href="#">Add/Edit Recipes</a></li>
                 
-                <li><a href="login.html">Login/Signup</a></li>
+                <!-- Sign out link, only visible when logged in -->
+                <li><a href="#" id="logout-button" style="display:none;">Sign Out</a></li>
+
+                <!-- Login/Signup link, only visible when logged out -->
+                <li><a href="login.html" class="link-login" style="display:block;">Login/Signup</a></li>
                 
+                <!-- My Account link, only visible after login -->
+                <li><a href="account.html" class="link-my-account" style="display:none;">My Account</a></li>
+              
                 <li><a class="link-search"></a></li>
             </ul>
         </nav>

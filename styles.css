@@ -945,3 +945,43 @@ a {
 .favorite-button:hover {
     background-color: #ffad29;
 }
+
+
+/*success css (YC)*/
+
+/* Success page container */
+.success-container {
+    padding: 60px;
+    background-color: #fff;
+    text-align: center;
+}
+
+/* Heading styling */
+.success-container h1 {
+    font-size: clamp(1.5rem, 4vw, 3rem);
+    color: #ff8800; /* Same orange color as in the other pages */
+    margin-bottom: 20px;
+}
+
+/* Success message styling */
+.success-container p {
+    font-size: clamp(1rem, 2.5vw, 1.8rem);
+    color: #000;
+}
+
+/* Button for success page */
+.success-container .login-btn {
+    background-color: #ff8800; /* Same orange color */
+    color: #fff;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 300ms ease;
+}
+
+.success-container .login-btn:hover {
+    background-color: #e67e00; /* Slightly darker shade of orange on hover */
+}

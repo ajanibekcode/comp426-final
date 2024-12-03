@@ -1,17 +1,20 @@
 const API_KEY = CONFIG.API_KEY;
 const BASE_URL = 'https://api.spoonacular.com/recipes';
+const FAVORITES_API_URL = 'http://localhost:3000/favorites';
 
 async function fetchRecipeDetails(recipeId) {
     try {
         const response = await fetch(`${BASE_URL}/${recipeId}/information?apiKey=${API_KEY}`);
         const recipe = await response.json();
-        displayRecipeDetails(recipe);
+        const favResponse = await fetch(`${FAVORITES_API_URL}/${recipeId}`);
+        const isFavorite = favResponse.ok;
+        displayRecipeDetails(recipe, isFavorite);
     } catch (error) {
         console.error('Error fetching recipe details: ', error);
     }
 }
 
-function displayRecipeDetails(recipe) {
+function displayRecipeDetails(recipe, isFavorite) {
     const recipeDetailContainer = document.querySelector('.recipe-detail');
     recipeDetailContainer.innerHTML = `
         <button class="back-button">Back</button>
@@ -19,7 +22,7 @@ function displayRecipeDetails(recipe) {
             <img src="${recipe.image}" alt="${recipe.title}">
             <h2>${recipe.title}</h2>
             <p>${recipe.instructions}</p>
-            <button class="favorite-button" data-id="${recipe.id}">Favorite</button>
+            <button class="favorite-button" data-id="${recipe.id}">${isFavorite ? 'Unfavorite' : 'Favorite'}</button>
         </div>
         <ul class="ingredients-list">
             ${recipe.extendedIngredients.map(ingredient => `<li>${ingredient.original}</li>`).join('')}
@@ -33,17 +36,30 @@ function displayRecipeDetails(recipe) {
     document.querySelector('.favorite-button').addEventListener('click', toggleFavorite);
 }
 
-function toggleFavorite(event) {
+async function toggleFavorite(event) {
     const button = event.target;
     const recipeId = button.getAttribute('data-id');
+    const recipeTitle = document.querySelector('.recipe-info h2').textContent;
+    const recipeImage = document.querySelector('.recipe-info img').src;
 
-    if (button.textContent === 'Unfavorite') {
-        button.textContent = 'Favorite';
-    } else {
-        button.textContent = 'Unfavorite';
+    try {
+        const response = await fetch(`${FAVORITES_API_URL}/${recipeId}`);
+        const isFavorite = response.ok;
+
+        if (isFavorite) {
+            await fetch(`${FAVORITES_API_URL}/${recipeId}`, { method: 'DELETE' });
+            button.textContent = 'Favorite';
+        } else {
+            await fetch(FAVORITES_API_URL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ id: recipeId, title: recipeTitle, image: recipeImage })
+            });
+            button.textContent = 'Unfavorite';
+        }
+    } catch (error) {
+        console.error('Error toggling favorite:', error);
     }
-
-    localStorage.setItem('favorites', JSON.stringify(favorites));
 }
 
 document.addEventListener('DOMContentLoaded', () => {
