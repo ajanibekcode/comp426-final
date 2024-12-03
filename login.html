@@ -33,11 +33,15 @@
 
                 <li><a href='index.html'>Home</a></li>
                 
-                <li><a href="favorites.html">My Recipes</a></li>
+                <li><a href="favorites.html" id="my-recipe" style="display:none;">My Recipes</a></li>
                 
-                <li><a href="login.html">Login/Signup</a></li>
-                
-                <li><a href="#" class="link-search"></a></li>
+                <!-- Sign out link, only visible when logged in -->
+                <li><a href="#" id="logout-button" style="display:none;">Sign Out</a></li>
+
+                <!-- Login/Signup link, only visible when logged out -->
+                <li><a href="login.html" class="link-login" style="display:block;">Login/Signup</a></li>
+                      
+                <li><a class="link-search"></a></li>
             </ul>
         </nav>
 
@@ -77,11 +81,11 @@
             <div class="quick-links">
                 <h2>Quick Links</h2>
                 <ul>
-                    <li><a href="#">Featured Recipes</a></li>
+                    <li><a href="pancake.html">Classic Pancake</a></li>
                     
-                    <li><a href="#">Simple Recipes</a></li>
+                    <li><a href="carbonara.html">Spagetti Carbonara</a></li>
                     
-                    <li><a href="#">Fast Recipes</a></li>
+                    <li><a href="salad.html">Caprese Salad</a></li>
                 </ul>
             </div>
         </div>
