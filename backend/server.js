@@ -1,5 +1,5 @@
 const express = require('express');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const { getDb } = require('./db.js'); 
 const cors = require('cors'); 
@@ -11,6 +11,7 @@ const PORT = 3000;
 const SECRET_KEY = 'secret';
 
 let db;
+let favorites = [];
 
 (async () => {
     db = await getDb();
