@@ -26,4 +26,4 @@ const CONFIG = {
 - Navigate to backend in terminal
 - Run `node server.js`
 
-### Video Link:
+### Video Link: (https://youtu.be/DKXv74D-eCA)
