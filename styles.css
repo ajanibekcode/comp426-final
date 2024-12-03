@@ -989,3 +989,69 @@ a {
 .vertical-margin {
     margin-top: 80px;
 }
+
+/* Recipe container styling */
+.recipe-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .recipe-container h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+  }
+  
+  .recipe-container p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    color: #555;
+  }
+  
+  .recipe-container h2 {
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+    color: #ff9900;
+  }
+  
+  .recipe-container ul, .recipe-container ol {
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .recipe-container ul li, .recipe-container ol li {
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    color: #333;
+  }
+  
+  .recipe-container ul li::before {
+    content: '• ';
+    color: #ff9900;
+    font-weight: bold;
+  }
+  
+  .recipe-container ol li {
+    counter-increment: step;
+    list-style: none;
+    padding-left: 1.2rem;
+    position: relative;
+  }
+  
+  .recipe-container ol li::before {
+    content: counter(step) ".";
+    position: absolute;
+    left: 0;
+    color: #ff9900;
+    font-weight: bold;
+  }
+
+  .recipe-image {
+    width: 100%; /* Make the image fill the container */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 20px; /* Add some space below the image */
+}

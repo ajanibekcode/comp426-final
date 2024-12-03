@@ -11,6 +11,7 @@
 </head>
 <body>
     <script src="config.js"></script>
+
     <!-- navigation setup -->
     <div class="nav-container">
         <nav>
@@ -33,11 +34,18 @@
 
                 <li><a href='index.html'>Home</a></li>
                 
-                <li><a href="favorites.html">My Recipes</a></li>
+                <li><a href="#" id = "my-recipe" style="display:none;">My Recipes</a></li>
                 
-                <li><a href="login.html">Login/Signup</a></li>
+                <!-- Sign out link, only visible when logged in -->
+                <li><a href="#" id="logout-button" style="display:none;">Sign Out</a></li>
+
+                <!-- Login/Signup link, only visible when logged out -->
+                <li><a href="login.html" class="link-login" style="display:block;">Login/Signup</a></li>
                 
-                <li><a href="#" class="link-search"></a></li>
+                <!-- My Account link, only visible after login -->
+                <li><a href="account.html" class="link-my-account" style="display:none;">My Account</a></li>
+              
+                <li><a class="link-search"></a></li>
             </ul>
         </nav>
 
@@ -77,41 +85,46 @@
             <div class="quick-links">
                 <h2>Quick Links</h2>
                 <ul>
-                    <li><a href="#">Featured Recipes</a></li>
+                  <li><a href="pancake.html">Classic Pancake</a></li>
                     
-                    <li><a href="#">Simple Recipes</a></li>
-                    
-                    <li><a href="#">Fast Recipes</a></li>
+                  <li><a href="carbonara.html">Spagetti Carbonara</a></li>
+                  
+                  <li><a href="salad.html">Caprese Salad</a></li>
                 </ul>
             </div>
         </div>
     </div>
+
+
+<div class="featured-recipes">
+  <h2>Featured Recipes</h2>
+  <div class="recipe-grid"></div>
+</div>
+  <div class="recipe-container">
+    <h1>Spaghetti Carbonara</h1>
+    <img src="images/carbonara.jpg" alt="Spaghetti Carbonara" class="recipe-image">
+    <h2>Ingredients:</h2>
+    <ul>
+      <li>200g spaghetti</li>
+      <li>100g pancetta</li>
+      <li>2 large eggs</li>
+      <li>50g grated Parmesan cheese</li>
+      <li>2 cloves garlic, minced</li>
+      <li>Salt and black pepper to taste</li>
+    </ul>
+    <h2>Instructions:</h2>
+    <ol>
+      <li>Cook spaghetti in boiling salted water until al dente.</li>
+      <li>In a pan, sauté pancetta with garlic until crispy.</li>
+      <li>Whisk eggs and Parmesan in a bowl.</li>
+      <li>Mix hot pasta with pancetta and egg mixture off the heat.</li>
+      <li>Season with salt and black pepper, then serve.</li>
+    </ol>
+  </div>
+
+  <div class="overlay"></div>
     
-    <div class="signup-container">
-        <div class="signup-content">
-            <h1>Login Page</h1>
-            <p>Don't have an account? Sign up today by clicking <a href='signup.html'>here.</a></p>
+  <script src="main.js"></script>
 
-            <!-- adding id (YC)-->
-            <form class="login-form" id="loginForm">
-                <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="password">Password:</label>
-                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
-                </div>
-
-                <button type="submit" class="btn-submit">Login</button>
-            </form>
-        </div>
-    </div>
-    
-
-    <div class="overlay"></div>
-    
-    <script src="main.js"></script>
 </body>
 </html>

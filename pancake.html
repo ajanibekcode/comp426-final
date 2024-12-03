@@ -11,6 +11,7 @@
 </head>
 <body>
     <script src="config.js"></script>
+
     <!-- navigation setup -->
     <div class="nav-container">
         <nav>
@@ -33,11 +34,18 @@
 
                 <li><a href='index.html'>Home</a></li>
                 
-                <li><a href="favorites.html">My Recipes</a></li>
+                <li><a href="#" id = "my-recipe" style="display:none;">My Recipes</a></li>
                 
-                <li><a href="login.html">Login/Signup</a></li>
+                <!-- Sign out link, only visible when logged in -->
+                <li><a href="#" id="logout-button" style="display:none;">Sign Out</a></li>
+
+                <!-- Login/Signup link, only visible when logged out -->
+                <li><a href="login.html" class="link-login" style="display:block;">Login/Signup</a></li>
                 
-                <li><a href="#" class="link-search"></a></li>
+                <!-- My Account link, only visible after login -->
+                <li><a href="account.html" class="link-my-account" style="display:none;">My Account</a></li>
+              
+                <li><a class="link-search"></a></li>
             </ul>
         </nav>
 
@@ -77,41 +85,48 @@
             <div class="quick-links">
                 <h2>Quick Links</h2>
                 <ul>
-                    <li><a href="#">Featured Recipes</a></li>
+                  <li><a href="pancake.html">Classic Pancake</a></li>
                     
-                    <li><a href="#">Simple Recipes</a></li>
-                    
-                    <li><a href="#">Fast Recipes</a></li>
+                  <li><a href="carbonara.html">Spagetti Carbonara</a></li>
+                  
+                  <li><a href="salad.html">Caprese Salad</a></li>
                 </ul>
             </div>
         </div>
     </div>
-    
-    <div class="signup-container">
-        <div class="signup-content">
-            <h1>Login Page</h1>
-            <p>Don't have an account? Sign up today by clicking <a href='signup.html'>here.</a></p>
 
-            <!-- adding id (YC)-->
-            <form class="login-form" id="loginForm">
-                <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
-                </div>
 
-                <div class="form-group">
-                    <label for="password">Password:</label>
-                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
-                </div>
+<div class="featured-recipes">
+  <h2>Featured Recipes</h2>
+  <div class="recipe-grid"></div>
+</div>
 
-                <button type="submit" class="btn-submit">Login</button>
-            </form>
-        </div>
-    </div>
-    
 
-    <div class="overlay"></div>
-    
-    <script src="main.js"></script>
+  <div class="recipe-container">
+    <img src="images/pancake.jpg" alt="Classic Pancake" class="recipe-image">
+    <h1>Classic Pancake</h1>
+    <p>Fluffy pancakes perfect for breakfast.</p>
+    <h2>Ingredients</h2>
+    <ul>
+      <li>1 cup all-purpose flour</li>
+      <li>2 tablespoons sugar</li>
+      <li>2 teaspoons baking powder</li>
+      <li>1/2 teaspoon salt</li>
+      <li>1 cup milk</li>
+      <li>2 tablespoons melted butter</li>
+      <li>1 egg</li>
+    </ul>
+    <h2>Instructions</h2>
+    <ol>
+      <li>In a bowl, mix dry ingredients.</li>
+      <li>In another bowl, whisk wet ingredients.</li>
+      <li>Combine and mix until smooth.</li>
+      <li>Heat a non-stick pan and pour batter.</li>
+      <li>Cook until bubbles form, then flip.</li>
+    </ol>
+  </div>
+
+  <div class="overlay"></div>
+  <script src="main.js"></script>
 </body>
 </html>
