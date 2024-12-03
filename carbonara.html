@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Find My Recipe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <script src="config.js"></script>
+
+    <!-- navigation setup -->
+    <div class="nav-container">
+        <nav>
+          <!-- mobile version -->
+            <ul class="mobile-nav">
+              <li>
+                <div class="menu-icon-container">
+                    <div class="menu-icon">
+                        <span class="line-1"></span>
+                        <span class="line-2"></span>
+                    </div>
+                </div>
+              </li>
+
+              <li><a href="#" class="link-logo"></a></li>
+            </ul>
+            <!-- desktop version -->
+            <ul class="desktop-nav">
+                <li><a href="#" class="link-logo"></a></li>
+
+                <li><a href='index.html'>Home</a></li>
+                
+                <li><a href="#" id = "my-recipe" style="display:none;">My Recipes</a></li>
+                
+                <!-- Sign out link, only visible when logged in -->
+                <li><a href="#" id="logout-button" style="display:none;">Sign Out</a></li>
+
+                <!-- Login/Signup link, only visible when logged out -->
+                <li><a href="login.html" class="link-login" style="display:block;">Login/Signup</a></li>
+                
+                <!-- My Account link, only visible after login -->
+                <li><a href="account.html" class="link-my-account" style="display:none;">My Account</a></li>
+              
+                <li><a class="link-search"></a></li>
+            </ul>
+        </nav>
+
+    <!-- end of navigation setup-->
+
+        <div class="search-container hide">
+            <div class="link-search"></div>
+            <div class="search-bar">
+                <form action="">
+                    <input type="text" placeholder="Search recipes, ingredients, foods...">
+                </form>
+            </div>
+            <div class="link-close"></div>
+
+            <div class="quick-links">
+                <h2>Quick Links</h2>
+                <ul>
+                    <li><a href="pancake.html">Classic Pancake</a></li>
+                    
+                    <li><a href="carbonara.html">Spagetti Carbonara</a></li>
+                    
+                    <li><a href="salad.html">Caprese Salad</a></li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="mobile-search-container">
+            <div class="link-search"></div>
+            <div class="search-bar">
+                <form action="">
+                    <input type="text" placeholder="Search recipes, ingredients, foods...">
+                </form>
+            </div>
+            <span class="cancel-btn">Cancel</span>
+
+            <div class="quick-links">
+                <h2>Quick Links</h2>
+                <ul>
+                    <li><a href="#">Featured Recipes</a></li>
+                    
+                    <li><a href="#">Simple Recipes</a></li>
+                    
+                    <li><a href="#">Fast Recipes</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+<div class="featured-recipes">
+  <h2>Featured Recipes</h2>
+  <div class="recipe-grid"></div>
+</div>
+  <div class="recipe-container">
+    <h1>Spaghetti Carbonara</h1>
+    <img src="images/spaghetti-carbonara.jpg" alt="Spaghetti Carbonara" class="recipe-image">
+    <h2>Ingredients:</h2>
+    <ul>
+      <li>200g spaghetti</li>
+      <li>100g pancetta</li>
+      <li>2 large eggs</li>
+      <li>50g grated Parmesan cheese</li>
+      <li>2 cloves garlic, minced</li>
+      <li>Salt and black pepper to taste</li>
+    </ul>
+    <h2>Instructions:</h2>
+    <ol>
+      <li>Cook spaghetti in boiling salted water until al dente.</li>
+      <li>In a pan, sauté pancetta with garlic until crispy.</li>
+      <li>Whisk eggs and Parmesan in a bowl.</li>
+      <li>Mix hot pasta with pancetta and egg mixture off the heat.</li>
+      <li>Season with salt and black pepper, then serve.</li>
+    </ol>
+  </div>
+
+  <div class="overlay"></div>
+    
+  <script src="main.js"></script>
+
+</body>
+</html>
