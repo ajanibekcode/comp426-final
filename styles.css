@@ -1049,3 +1049,9 @@ a {
     color: #ff9900;
     font-weight: bold;
   }
+
+  .recipe-image {
+    width: 100%; /* Make the image fill the container */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 20px; /* Add some space below the image */
+}
